@@ -32,7 +32,7 @@ run_scan() {
   [ "$IN_PIPELINE_TESTING" = "true" ] && args+=(--pipeline-testing)
 
   echo "Running: shannon ${args[*]}"
-  npx --yes "@keygraph/shannon@${IN_VERSION}" "${args[@]}"
+  npx --yes "@ezlkg/shn@${IN_VERSION}" "${args[@]}"
 }
 
 publish_report_outputs() {

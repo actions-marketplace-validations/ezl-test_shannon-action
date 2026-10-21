@@ -20,7 +20,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Run Shannon
-        uses: KeygraphHQ/shannon-action@v1
+        uses: ezl-test/shannon-action@v1
         with:
           url: ${{ vars.STAGING_URL }}
           config: .shannon/full.yaml

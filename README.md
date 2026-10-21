@@ -8,7 +8,7 @@
 
 # Shannon GitHub Action
 
-Run [Shannon](https://github.com/KeygraphHQ/shannon), Keygraph's autonomous white-box AI pentester, from a GitHub Actions workflow. Shannon reads your source code, maps the attack surface, and exploits real vulnerabilities against a running target, then hands you a security assessment report. This action is a thin wrapper around the [`@keygraph/shannon`](https://www.npmjs.com/package/@keygraph/shannon) CLI.
+Run [Shannon](https://github.com/KeygraphHQ/shannon), Keygraph's autonomous white-box AI pentester, from a GitHub Actions workflow. Shannon reads your source code, maps the attack surface, and exploits real vulnerabilities against a running target, then hands you a security assessment report. This action is a thin wrapper around the [`@ezlkg/shn`](https://www.npmjs.com/package/@ezlkg/shn) CLI.
 
 ## What you get
 
@@ -33,7 +33,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Run Shannon
-        uses: KeygraphHQ/shannon-action@v1
+        uses: ezl-test/shannon-action@v1
         with:
           url: https://staging.example.com
           api-key: ${{ secrets.SHANNON_AI_API_KEY }}
@@ -110,7 +110,7 @@ with:
 | `api-key` | | - | LLM provider API key (`SHANNON_AI_API_KEY`) for any non-Bedrock provider, including the default Anthropic model. |
 | `aws-bearer-token-bedrock` | | - | Amazon Bedrock bearer token (`AWS_BEARER_TOKEN_BEDROCK`). Required for `model: amazon-bedrock:...`. |
 | `aws-region` | | - | AWS region for Bedrock (`AWS_REGION`). Required for `model: amazon-bedrock:...`. |
-| `version` | | `3.0.0` | Version of the `@keygraph/shannon` npm package to run. |
+| `version` | | `3.4.1` | Version of the `@ezlkg/shn` npm package to run. |
 | `pipeline-testing` | | `false` | Minimal prompts for fast pipeline testing. |
 | `fail-on-severity` | | `none` | Fail the job if any exploited finding is at or above this severity: `none`, `low`, `medium`, `high`, `critical`. See [Pass / fail](#pass--fail). |
 | `upload-sarif` | | `false` | Upload `report.sarif` (when produced) to GitHub code scanning. Requires `security-events: write`. |
@@ -170,7 +170,7 @@ Point Shannon at a staging or development environment you own. It actively explo
 
 ## License
 
-This action is licensed under the [Apache License 2.0](./LICENSE). The Shannon CLI it runs (`@keygraph/shannon`) is licensed separately under [AGPL-3.0](https://github.com/KeygraphHQ/shannon/blob/main/LICENSE).
+This action is licensed under the [Apache License 2.0](./LICENSE). The Shannon CLI it runs (`@ezlkg/shn`) is licensed separately under [AGPL-3.0](https://github.com/KeygraphHQ/shannon/blob/main/LICENSE).
 
 <p align="center">
   <b>Built by <a href="https://keygraph.io">Keygraph</a></b>

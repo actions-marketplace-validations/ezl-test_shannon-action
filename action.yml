@@ -47,9 +47,9 @@ inputs:
     required: false
     default: ''
   version:
-    description: 'Version of the @keygraph/shannon npm package to run.'
+    description: 'Version of the @ezlkg/shn npm package to run.'
     required: false
-    default: '3.0.0'
+    default: '3.4.1'
   pipeline-testing:
     description: 'Run with minimal prompts for fast pipeline testing.'
     required: false
@@ -123,7 +123,7 @@ runs:
     - name: Stop Shannon worker
       if: always()
       shell: bash
-      run: npx --yes "@keygraph/shannon@${{ inputs.version }}" stop "${{ inputs.workspace }}" -y 2>/dev/null || true
+      run: npx --yes "@ezlkg/shn@${{ inputs.version }}" stop "${{ inputs.workspace }}" -y 2>/dev/null || true
 
     - name: Upload report bundle
       id: upload_report
